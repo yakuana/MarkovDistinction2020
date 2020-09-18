@@ -12,7 +12,15 @@ const UserGrid = () => {
 
     const [upCount, setUpCount] = useState(0)
     const [downCount, setDownCount] = useState(0)
+    const [selected, setSelectedArray] = useState([])
     const [isDisplayed, setIsDisplayed] = useState(false)
+
+    const [upUpData, setUpUpData] = useState(0)
+    const [upDownData, setUpDownData] = useState(0)
+    const [downDownData, setDownDownData] = useState(0)
+    const [downUpData, setDownUpData] = useState(0)
+
+    const TOTAL = selected.length
 
     const TEN_SECONDS = 10; 
 
@@ -24,6 +32,8 @@ const UserGrid = () => {
             setDownCount(downCount + 1)
             console.log(`down clicked ${downCount} times`)
         }
+
+        setSelectedArray([...selected, data])
     }
 
     const startTimer = (duration) => {
@@ -44,15 +54,41 @@ const UserGrid = () => {
             display.textContent = minutes + ":" + seconds;
     
             if (--timer < 0) {
-                setIsDisplayed(false)
-                stopTimer()
+                stopTimer();
             }
 
         }, 1000);
     }
-
     
- 
+    const getData = () => {
+        var uuData = 0 
+        var udData = 0
+        var ddData = 0
+        var duData = 0 
+
+        for (var i = 0; i < selected.length; i++) {
+
+            if (i + 1 < selected.length) {
+
+                if (selected[i] === "up" && selected[i + 1] === "up") {
+                    uuData++ 
+                } else if (selected[i] === "up" && selected[i + 1] === "down") {
+                    udData++ 
+                } else if (selected[i] === "down" && selected[i + 1] === "down") {
+                    ddData++ 
+                } else if (selected[i] === "down" && selected[i + 1] === "up") {
+                    duData++ 
+                }
+            }
+        }
+
+        setDownDownData(ddData)
+        setDownUpData(duData)
+        setUpUpData(uuData)
+        setUpDownData(udData)
+
+    }
+
     return (
         <div id="user-grid">
             <div id="user-desc-container">
@@ -76,6 +112,28 @@ const UserGrid = () => {
                 <img src={Down} alt="Older man scrunching his face. His thumb down is in the foreground." className="imgs" onClick={() => clicked("down")}></img>
             </div> : null}
 
+            <button onClick={()  => getData()}>See Results</button>
+
+            <table>
+                <caption>Markov Model:</caption>
+                <tr>
+                    <td></td>
+                    <th scope="col">Up</th>
+                    <th scope="col">Down</th>
+                </tr>
+                <tr>
+                    <th scope="row">Up</th>
+                    <td>{upUpData / TOTAL}</td>
+                    <td>{upDownData / TOTAL}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Down</th>
+                    <td>{downUpData / TOTAL}</td>
+                    <td>{downDownData / TOTAL}</td>
+                </tr>
+            </table>
+
+            
         </div>
     );
 }
