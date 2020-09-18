@@ -1,5 +1,6 @@
 .App {
   font-size: 62.5%;
+  padding-bottom: 30px;
 }
 
 /* header styles */
@@ -72,5 +73,4 @@ table {
 #user-finish {
   width: 150px;
   height: 40px;
-  margin-top: 30px;
 }

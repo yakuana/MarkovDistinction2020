@@ -114,6 +114,9 @@ const UserGrid = () => {
                 <img src={Down} alt="Older man scrunching his face. His thumb down is in the foreground." className="imgs" onClick={() => clicked("down")}></img>
             </div> : null}
 
+
+            <p style={{textAlign: "center", fontSize: "1.8rem", margin: "150px auto 10px auto"}}>Press the See Results button after completing a session to see your Markov table!</p>
+
             <div style={{width: "50%", margin: "20px auto", display: "flex", justifyContent: "center"}}>
             <button onClick={() => getData()} id="user-finish">See Results</button>
             </div>
