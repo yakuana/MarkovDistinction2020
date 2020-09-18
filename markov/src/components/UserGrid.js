@@ -15,6 +15,7 @@ const UserGrid = () => {
     const [selected, setSelectedArray] = useState([])
     const [isDisplayed, setIsDisplayed] = useState(false)
 
+    // final data 
     const [upUpData, setUpUpData] = useState(0)
     const [upDownData, setUpDownData] = useState(0)
     const [downDownData, setDownDownData] = useState(0)
@@ -55,6 +56,7 @@ const UserGrid = () => {
     
             if (--timer < 0) {
                 stopTimer();
+                setIsDisplayed(false)
             }
 
         }, 1000);
@@ -112,28 +114,30 @@ const UserGrid = () => {
                 <img src={Down} alt="Older man scrunching his face. His thumb down is in the foreground." className="imgs" onClick={() => clicked("down")}></img>
             </div> : null}
 
-            <button onClick={()  => getData()}>See Results</button>
+            <div style={{width: "50%", margin: "20px auto", display: "flex", justifyContent: "center"}}>
+            <button onClick={() => getData()} id="user-finish">See Results</button>
+            </div>
 
-            <table>
-                <caption>Markov Model:</caption>
-                <tr>
-                    <td></td>
-                    <th scope="col">Up</th>
-                    <th scope="col">Down</th>
-                </tr>
-                <tr>
-                    <th scope="row">Up</th>
-                    <td>{upUpData / TOTAL}</td>
-                    <td>{upDownData / TOTAL}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Down</th>
-                    <td>{downUpData / TOTAL}</td>
-                    <td>{downDownData / TOTAL}</td>
-                </tr>
-            </table>
-
-            
+            <div id="markov-container">
+                <table>
+                    <caption>Markov Model:</caption>
+                    <tr>
+                        <td></td>
+                        <th scope="col">Up</th>
+                        <th scope="col">Down</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Up</th>
+                        <td>{upUpData / TOTAL}</td>
+                        <td>{upDownData / TOTAL}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Down</th>
+                        <td>{downUpData / TOTAL}</td>
+                        <td>{downDownData / TOTAL}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     );
 }
