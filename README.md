@@ -15,7 +15,7 @@ Predicting user selection is something that coul be useful for navigating users 
 I think that this project is somewhat creative as it allows for user interaction and there is some portions of the data presented and the content that shows on the website that are left completely in the hands of the user. 
 
 ## Sources 
-- https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer 
-- https://www.w3schools.com/jsref/met_win_clearinterval.asp
-- https://unsplash.com/@markusspiske
-- 
+- https://stackoverflow.com/questions/20618355/the-simplest-possible-javascript-countdown-timer (timer)
+- https://www.w3schools.com/jsref/met_win_clearinterval.asp (clear timer interval)
+- https://unsplash.com/@markusspiske (thumbs down images)
+- https://unsplash.com/@acharki95 (thumbs up images)

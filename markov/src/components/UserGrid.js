@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+// images 
 import Down from '../images /down.jpg'
 import Up from '../images /up.jpg'
 
