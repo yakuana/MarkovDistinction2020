@@ -1,0 +1,55 @@
+.App {
+  font-size: 62.5%;
+}
+
+/* header styles */
+#header-container {
+  padding: 12px 0px;
+}
+
+#header {
+  margin: 0 auto; 
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+#header-desc {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
+/* user grid styles */
+#user-desc-container {
+  width: 90%; 
+  margin: 0 auto;
+  border: 1px solid black;
+  text-align: center;
+  font-size: .86rem;
+}
+
+#user-start {
+  width: 150px;
+  height: 40px;
+
+}
+
+#time-holder {
+  text-align: center;
+  font-size: 6rem;
+}
+
+.imgs {
+  width: 360px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+#img-container {
+  border: 1px solid red; 
+  width: 52%; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
