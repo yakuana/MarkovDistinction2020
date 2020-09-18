@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Down from '../images /down1.jpg'
+import Down from '../images /down.jpg'
 import Up from '../images /up.jpg'
 
 // styles 
@@ -42,10 +42,10 @@ const UserGrid = () => {
             display.textContent = minutes + ":" + seconds;
     
             if (--timer < 0) {
-                // display.style.display = "none";
                 setIsDisplayed(false)
                 stopTimer()
             }
+
         }, 1000);
     }
 
