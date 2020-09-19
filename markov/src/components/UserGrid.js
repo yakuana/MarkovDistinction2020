@@ -131,13 +131,13 @@ const UserGrid = () => {
                     </tr>
                     <tr>
                         <th scope="row">Up</th>
-                        <td>{upUpData / TOTAL}</td>
-                        <td>{upDownData / TOTAL}</td>
+                        <td>{(upUpData / TOTAL).toFixed(3)}</td>
+                        <td>{(upDownData / TOTAL).toFixed(3)}</td>
                     </tr>
                     <tr>
                         <th scope="row">Down</th>
-                        <td>{downUpData / TOTAL}</td>
-                        <td>{downDownData / TOTAL}</td>
+                        <td>{(downUpData / TOTAL).toFixed(3)}</td>
+                        <td>{(downDownData / TOTAL).toFixed(3)}</td>
                     </tr>
                 </table>
             </div>

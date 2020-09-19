@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Markov React App",
+  "name": "Markov Create React App",
   "icons": [
     {
       "src": "favicon.ico",
